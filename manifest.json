@@ -1,6 +1,11 @@
 {
-  "short_name": "MyApp",
   "name": "My Application",
+  "short_name": "MyApp",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "description": "Это простой пример PWA.",
   "icons": [
     {
       "src": "favicon.ico",
@@ -18,10 +23,6 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff",
   "screenshots": [
     {
       "src": "screenshot1.png",

@@ -1,17 +1,16 @@
 // public/service-worker.js
 
 self.addEventListener('install', (event) => {
-    console.log('Service Worker установился.');
-
+    // console.log('Service Worker установился.');
     event.waitUntil(
       caches.open('my-cache-v1').then((cache) => {
         return cache.addAll([
             '/',
             '/index.html',
-            '/static/css/main.css', // путь к вашему CSS
-            '/static/js/bundle.js', // путь к вашему JS
-            '/logo192.png',          // ваши иконки
-            '/logo512.png',   
+            '/logo192.png', 
+            '/logo512.png', 
+            '/screenshot1.png',
+            '/screenshot2.png'  
         ]);
       })
     );
