@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.js": "/glodocsy/static/js/main.38221a66.js",
+    "main.js": "/glodocsy/static/js/main.2063d95a.js",
     "static/js/453.bf763991.chunk.js": "/glodocsy/static/js/453.bf763991.chunk.js",
     "index.html": "/glodocsy/index.html",
-    "main.38221a66.js.map": "/glodocsy/static/js/main.38221a66.js.map",
+    "main.2063d95a.js.map": "/glodocsy/static/js/main.2063d95a.js.map",
     "453.bf763991.chunk.js.map": "/glodocsy/static/js/453.bf763991.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.38221a66.js"
+    "static/js/main.2063d95a.js"
   ]
 }
