@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.js": "/glodocsy/static/js/main.6ca635f4.js",
+    "main.js": "/glodocsy/static/js/main.7ecc63c1.js",
     "static/js/453.e1570595.chunk.js": "/glodocsy/static/js/453.e1570595.chunk.js",
     "static/media/Шаблон фототаблицы по патрулированию.docx": "/glodocsy/static/media/Шаблон фототаблицы по патрулированию.128ac372134397cee022.docx",
     "static/media/Шаблон схемы проведённого патрулирования.docx": "/glodocsy/static/media/Шаблон схемы проведённого патрулирования.e2f5d112525c89f8d39a.docx",
     "static/media/Шаблон акта о проведённом патрулировании.docx": "/glodocsy/static/media/Шаблон акта о проведённом патрулировании.bc0c837ba7febeb87e1a.docx",
     "static/media/Шаблон задания на патрулирование.docx": "/glodocsy/static/media/Шаблон задания на патрулирование.edd6296eb2149ce8735f.docx",
     "index.html": "/glodocsy/index.html",
-    "main.6ca635f4.js.map": "/glodocsy/static/js/main.6ca635f4.js.map",
+    "main.7ecc63c1.js.map": "/glodocsy/static/js/main.7ecc63c1.js.map",
     "453.e1570595.chunk.js.map": "/glodocsy/static/js/453.e1570595.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.6ca635f4.js"
+    "static/js/main.7ecc63c1.js"
   ]
 }
