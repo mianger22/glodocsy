@@ -2,7 +2,8 @@
 
 // Событие установки Service Worker
 self.addEventListener('install', (event) => {
-    // console.log('Service Worker установился.');
+    console.log('Service Worker установился.');
+
     event.waitUntil(
       caches.open('my-cache-v1').then((cache) => {
         return cache.addAll([
@@ -15,11 +16,14 @@ self.addEventListener('install', (event) => {
         ]);
       })
     );
+
+    self.skipWaiting(); // Позволяет принять новую версию сразу после установки
 });
 
 // Событие активации Service Worker
 self.addEventListener('activate', event => {
   const cacheWhitelist = ['my-cache-v2']; // Укажите новую версию кэша
+  
   event.waitUntil(
       caches.keys().then(cacheNames => {
           return Promise.all(
@@ -31,6 +35,17 @@ self.addEventListener('activate', event => {
           );
       })
   );
+
+  event.waitUntil(
+    clients.claim().then(() => {
+        // Уведомление о новой версии
+        clients.matchAll().then(clients => {
+            clients.forEach(client => {
+                client.postMessage({ type: 'NEW_VERSION_AVAILABLE' });
+            });
+        });
+    })
+);
 });
 
 // Событие запроса (fetch)
