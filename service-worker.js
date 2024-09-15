@@ -1,5 +1,6 @@
 // public/service-worker.js
 
+// Событие установки Service Worker
 self.addEventListener('install', (event) => {
     // console.log('Service Worker установился.');
     event.waitUntil(
@@ -16,29 +17,36 @@ self.addEventListener('install', (event) => {
     );
 });
 
-self.addEventListener('activate', (event) => {
-    console.log('Service Worker активирован.');
-
-    const cacheWhitelist = ['my-cache-v1'];
-    event.waitUntil(
-      caches.keys().then((cacheNames) => {
-        return Promise.all(
-          cacheNames.map((cacheName) => {
-            if (cacheWhitelist.indexOf(cacheName) === -1) {
-              return caches.delete(cacheName);
-            }
-          })
-        );
+// Событие активации Service Worker
+self.addEventListener('activate', event => {
+  const cacheWhitelist = ['my-cache-v2']; // Укажите новую версию кэша
+  event.waitUntil(
+      caches.keys().then(cacheNames => {
+          return Promise.all(
+              cacheNames.map(cacheName => {
+                  if (cacheWhitelist.indexOf(cacheName) === -1) {
+                      return caches.delete(cacheName); // Удаляем старый кэш
+                  }
+              })
+          );
       })
-    );
-  });
+  );
+});
 
-self.addEventListener('fetch', (event) => {
-    event.respondWith(
-        caches.match(event.request).then((response) => {
-            return response || fetch(event.request);
-        })
-    );
+// Событие запроса (fetch)
+self.addEventListener('fetch', event => {
+  event.respondWith(
+      caches.open('my-cache-v2').then(cache => {
+          return fetch(event.request).then(response => {
+              // Обновляем кэш новыми данными
+              cache.put(event.request, response.clone());
+              return response;
+          }).catch(() => {
+              // Если запрос не удался, возвращаем кэшированный ответ
+              return caches.match(event.request);
+          });
+      })
+  );
 });
 
 self.addEventListener('message', (event) => {
