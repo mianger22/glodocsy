@@ -1,6 +1,6 @@
 {
   "name": "My Application",
-  "short_name": "MyApp",
+  "short_name": "Глодоски",
   "start_url": ".",
   "display": "standalone",
   "background_color": "#ffffff",
