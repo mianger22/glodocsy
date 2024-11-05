@@ -22,7 +22,7 @@ self.addEventListener('install', (event) => {
 
 // Событие активации Service Worker
 self.addEventListener('activate', event => {
-  const cacheWhitelist = ['my-cache-v2']; // Укажите новую версию кэша
+  const cacheWhitelist = ['my-cache-v3']; // Укажите новую версию кэша
   
   event.waitUntil(
       caches.keys().then(cacheNames => {
